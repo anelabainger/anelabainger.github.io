@@ -1,0 +1,398 @@
+body{
+    background-color: black;
+}
+
+div.width20 {
+    width: 20%;
+}
+.glitch-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow:hidden;
+}
+
+.glitch-image {
+  width: 60%;
+  height: 80%;
+  background-size: cover;
+  position: relative;
+}
+
+/* Create the glitch layers */
+.glitch-image::before,
+.glitch-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+}
+
+/* Blue shift layer */
+.glitch-image::before {
+  left: 2px;
+  text-shadow: -2px 0 #00ffff;
+  clip-path: rect(0, 900px, 0, 0);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+/* Red shift layer */
+.glitch-image::after {
+  left: -2px;
+  text-shadow: -2px 0 #ff00ff;
+  clip-path: rect(0, 900px, 0, 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+/* Animation Keyframes (Randomized Clipping) */
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 50% 0); }
+  20% { clip-path: inset(80% 0 10% 0); }
+  40% { clip-path: inset(10% 0 70% 0); }
+  60% { clip-path: inset(40% 0 40% 0); }
+  80% { clip-path: inset(70% 0 5% 0); }
+  100% { clip-path: inset(30% 0 60% 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(10% 0 80% 0); }
+  30% { clip-path: inset(50% 0 30% 0); }
+  60% { clip-path: inset(20% 0 60% 0); }
+  90% { clip-path: inset(80% 0 5% 0); }
+  100% { clip-path: inset(40% 0 40% 0); }
+}
+
+img{width: 100%;
+display: block;}
+
+div.title {
+font-family:"helvetica-neue-world";
+font-weight: bold;
+color:white;
+font-size: 165px;
+line-height: 100px;
+text-align: center;
+margin-top: 50px;
+margin-bottom: 100px;
+-webkit-filter: blur(8px);
+transition: 2s;
+}
+
+div.title:hover {
+    -webkit-filter: blur(0px);
+    transition: 2s;
+}
+
+div.contents{
+font-family:"helvetica-neue-world";
+font-size:21px;
+line-height:20px;
+text-align:justify;
+margin-top: 10px;
+margin-left: 20px;
+}
+
+div.container{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+div.item{
+    font-family: "helvetica-neue-world";
+    background-color:darkred;
+    color:aliceblue;
+}
+
+div.text {
+    font-family: Helvetica, sans-serif;
+    margin:100px;
+}
+
+div.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.width20 {
+    width: 20%;
+}
+
+div.scrollingtext {
+    font-family: Helvetica;
+    font-weight:bold;
+    text-align: justify;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    height:410vh;
+    overflow: scroll;
+    font-size: 25px;
+}
+
+div.width60{
+width: 60%;
+}
+
+.marquee-container {
+width: 100%;
+overflow: hidden;
+background: crimson;
+color: white;
+padding: 10px 0;
+white-space:nowrap;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.marquee-text span{
+display: inline-block;
+padding-left: 100%;
+animation: scroll-left 10s linear infinite;
+font-family: helvetica;
+font-size: 20px;
+font-weight: bolder;
+}
+
+@keyframes scroll-left {
+0% {transform: translateX(0);}
+100% {transform: translateX(-100%);}
+}
+
+div.main {
+    background-color: black;
+    color:white;
+}
+
+div.header {
+    font-family: helvetica;
+    font-weight: bold;
+    text-align: justify;
+    color: azure;
+    background: crimson;
+    height: 12vh;
+    font-size: 15;
+    overflow:auto;
+    padding: 2%;
+    display: flex;
+    gap: 30px;
+}
+
+div.quote1 { 
+    font-family: helvetica;
+    font-weight: bold;
+    text-align: justify;
+    color: azure;
+    font-size: 25px;
+    padding: 2%
+}
+
+div.premise {
+    font-family: helvetica;
+    font-weight:normal;
+    text-align: justify;
+    color: azure;
+    background: crimson;
+    height: 20vh;
+    font-size: 15px;
+    overflow:auto;
+    display: flex;
+    padding: 2%
+}
+#container {
+    display: flex;
+    background-color: crimson;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#container div{
+background-color:azure;
+align-items: center;
+margin: 10px;
+width: 100%;
+padding: 5px;
+font-family: helvetica;
+font-size: 15px;
+font-style: normal;
+font-weight:60px;
+color: black;
+}
+
+div.statistic {
+    font-family: helvetica;
+    font-weight: bold;
+    text-align:right;
+    color: azure;
+    font-size: 80;
+    padding: 2%;
+    display: flex;
+    margin-top: 100px;
+}
+
+div.statisticquote {
+font-family:"helvetica-neue-world";
+font-weight: bold;
+color:white;
+font-size: 30px;
+text-align: right;
+padding: 2%;
+display: flex;
+-webkit-filter: blur(4px);
+transition: 2s;
+}
+div.statisticquote:hover {
+    -webkit-filter: blur(0px);
+    transition: 2s;
+}
+div.destruction {
+    font-family: helvetica;
+    font-weight:normal;
+    text-align: justify;
+    color: azure;
+    background: crimson;
+    height: 12vh;
+    font-size: 15px;
+    overflow:auto;
+    display: flex;
+    padding: 2%
+}
+
+div.quote2 {
+    font-family: helvetica;
+    font-weight: bold;
+    text-align: justify;
+    color: azure;
+    font-size: 25px;
+    padding: 2%
+}
+
+div.smallquote {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: left;
+    color: azure;
+    font-size: 15px;
+    padding: 2%
+}
+
+div.potential {
+    font-family: helvetica;
+    font-weight:normal;
+    text-align: justify;
+    color: azure;
+    background: crimson;
+    height: 12vh;
+    font-size: 15px;
+    overflow:auto;
+    display: flex;
+    padding: 2%
+}
+
+div.reclaiming {
+    font-family: helvetica;
+    font-weight: bold;
+    text-align: justify;
+    color: azure;
+    font-size: 25px;
+    padding: 2% 
+}
+
+div.peace {
+    font-family: helvetica;
+    font-weight:normal;
+    text-align: justify;
+    color: azure;
+    background: crimson;
+    height: 9vh;
+    font-size: 15px;
+    overflow:auto;
+    display: flex;
+    padding: 2%
+}
+
+#container1 {
+    display: flex;
+    background-color: crimson;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#container1 div{
+background-color: azure;
+align-items: center;
+margin: 10px;
+width: 100%;
+padding: 5px;
+font-family: helvetica;
+font-size: 15px;
+font-style: normal;
+font-weight:60px;
+color: black;
+
+}
+
+div.interlinked {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: left;
+    color: azure;
+    font-size: 20px;
+    padding: 2%
+}
+
+div.quote3 {
+    font-family: helvetica;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: left;
+    color: azure;
+    font-size: 10px;
+    padding: 2%
+}
+
+div.colophon {
+    font-family: helvetica;
+    font-weight: bold;
+    text-align: justify;
+    color: azure;
+    background: crimson;
+    height: 25vh;
+    font-size: 15;
+    overflow:auto;
+    padding: 2%;
+    gap: 30px;
+    margin-right: auto;
+
+}
+
+.marquee-container {
+width: 100%;
+overflow: hidden;
+background: crimson;
+color: white;
+padding: 10px 0;
+white-space:nowrap;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.marquee-text span{
+display: inline-block;
+padding-left: 100%;
+animation: scroll-left 10s linear infinite;
+font-family: helvetica;
+font-size: 20px;
+font-weight: bolder;
+}
+
+@keyframes scroll-left {
+0% {transform: translateX(0);}
+100% {transform: translateX(-100%);}
+}
